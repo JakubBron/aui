@@ -3,14 +3,15 @@ package org.example;
 import lombok.*;
 import java.io.Serializable;
 
-@Builder(builderMethodName = "buildInternal")
 @Data
+//@Builder(builderMethodName = "buildInternal")
+@Builder
 public class Character implements Serializable {
     String name;
     int level;
     Profession profession;
 
-    public static class CharacterBuilder {
+    /*public static class CharacterBuilder {
         public Character build() {
             Character character = this.buildInternal();
             character.getProfession().getCharacters().add(character);
@@ -26,4 +27,5 @@ public class Character implements Serializable {
             profession.getCharacters().add(this);
         }
     }
+    */
 }

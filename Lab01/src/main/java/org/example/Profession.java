@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class Profession implements Serializable {
     String name;
-    int swordSkill;
+    int yearsOfexperience;
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
