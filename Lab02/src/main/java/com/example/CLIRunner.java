@@ -25,9 +25,8 @@ public class CLIRunner implements CommandLineRunner {
     public void run(String... args) {
         boolean isRunning = true;
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Welcome to The App (TM). Type command below or type 'help' to get list of possible commands.");
         while(isRunning) {
-            System.out.println("Welcome to The App (TM). Type command below or type 'help' to get list of possible commands.");
             System.out.print("> ");
             String command = scanner.nextLine();
 
@@ -84,7 +83,7 @@ public class CLIRunner implements CommandLineRunner {
                     System.out.println("Enter character profession (choose a number): ");
                     List<Profession> p = professionService.findAll();
                     for(int i = 0; i < p.size(); i++) {
-                        System.out.println((i+1) + ". " + p.get(i).getName() + p.get(i).getYearsOfExperience());
+                        System.out.println((i+1) + ". " + p.get(i).getName() +" "+ p.get(i).getYearsOfExperience());
                     }
                     String choiceString = scanner.nextLine();
                     if(choiceString.isEmpty()) {

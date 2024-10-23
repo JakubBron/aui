@@ -32,7 +32,7 @@ public class DataInitializer {
         }
 
         List<Profession> professions = new ArrayList<>();
-        List<String> professionNames = List.of("Żołnierz", "Aktor", "Zbir");
+        List<String> professionNames = List.of("Żołnierz", "Aktor", "Złodziej");
         for(int i = 0; i < professionNames.size(); i++) {
             Profession profession = Profession.builder()
                     .id(UUID.nameUUIDFromBytes(professionNames.get(i).getBytes()))

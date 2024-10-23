@@ -11,6 +11,5 @@ import java.util.UUID;
 public interface ProfessionRepository extends JpaRepository<Profession, UUID> {
     List<Profession> findAll();
     List<Profession> findByNameIgnoreCase(String name);
-
     Optional<Profession> findById(UUID id);
 }
