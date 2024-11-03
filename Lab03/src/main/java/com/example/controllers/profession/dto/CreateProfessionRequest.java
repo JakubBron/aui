@@ -5,7 +5,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class CreateCategoryRequest {
+public class CreateProfessionRequest {
     String name;
     int yearsOfExperience;
 }

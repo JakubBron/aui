@@ -1,2 +1,20 @@
-package com.example.controllers.character.dto;public class CharactersResponse {
+package com.example.controllers.character.dto;
+
+import lombok.Builder;
+import lombok.Value;
+
+import java.util.List;
+import java.util.UUID;
+
+@Value
+@Builder
+public class CharactersResponse {
+    List<Character> characters;
+
+    @Value
+    @Builder
+    public static class Character {
+        UUID id;
+        String name;
+    }
 }

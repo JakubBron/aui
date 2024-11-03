@@ -1,66 +1,66 @@
-### Get all categories
-GET http://localhost:8080/api/categories
+### Get all professions
+GET http://localhost:8080/api/professions
 
-### Create a new category
-PUT http://localhost:8080/api/categories
+### Get all characters
+GET http://localhost:8080/api/characters
+
+
+### Create a new profession
+PUT http://localhost:8080/api/professions
 Content-Type: application/json
 
 {
-  "name": "Meat",
-  "description": "Tasty pork, beef, and chicken",
-  "popularity": 4
+  "name": "Testowy",
+  "yearsOfExperience": 4
 }
 
-### Get a category
-GET http://localhost:8080/api/categories/3fab9887-b93e-44ef-b0fb-815898584723
+### Get a profession by UUID
+GET http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
 
-### Get a not existing category
-GET http://localhost:8080/api/categories/8554295e-22c0-4d94-9358-177ccc857b10
+### Get a not existing profession
+GET http://localhost:8080/api/profession/8554295e-22c0-4d94-9358-177ccc857b10
 
-### Update a category
-PATCH http://localhost:8080/api/categories/3fab9887-b93e-44ef-b0fb-815898584723
+### Update a profession
+PATCH http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
 Content-Type: application/json
 
 {
-  "name": "Fruits",
-  "description": "Even more fruits",
-  "popularity": 5
+  "name": "NowaNazwa",
+  "yearsOfExperience": 5
 }
 
-### Delete a category
-DELETE http://localhost:8080/api/categories/3fab9887-b93e-44ef-b0fb-815898584723
+### Delete a profession
+DELETE http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
 
-### Get all products of a category
-GET http://localhost:8080/api/categories/3fab9887-b93e-44ef-b0fb-815898584723/products
+### Get all characters of a given profession
+GET http://localhost:8080/api/professions/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/characters
 
-### Create a new product in a category
-POST http://localhost:8080/api/categories/3fab9887-b93e-44ef-b0fb-815898584723/products
+### Create new character with a given profession (Żołnierz)
+POST http://localhost:8080/api/professions/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/characters
 Content-Type: application/json
 
 {
-  "name": "Banana",
-  "price": 299,
-  "stock": 76
+  "name": "Paweł",
+  "age": 30,
+  "level": 500
 }
 
-### Get all products
-GET http://localhost:8080/api/products
+### Get all characters
+GET http://localhost:8080/api/characters
 
-### Get a product
-GET http://localhost:8080/api/products/a76a11ef-9889-4efb-897e-f1606a9d67b9
+### Get a character by UUID (Paweł Żołnierz lvl 500)
+GET http://localhost:8080/api/products/
 
 ### Get a not existing product
-GET http://localhost:8080/api/products/43bb5d03-efeb-4de2-a0ea-d6c0a78c3832
+GET http://localhost:8080/api/characters/9be83deb-879f-4f11-9af0-0afaaff11ecc
 
-### Update a product
-PATCH http://localhost:8080/api/products/a76a11ef-9889-4efb-897e-f1606a9d67b9
+### Update a character (Paweł, lvl 500 -> 50)
+PATCH http://localhost:8080/api/characters/9be83deb-879f-4f11-9af0-0afaaff11ecc
 Content-Type: application/json
 
 {
-  "name": "Red apple",
-  "price": 199,
-  "stock": 67
+  "level": 50
 }
 
-### Delete a product
-DELETE http://localhost:8080/api/products/a76a11ef-9889-4efb-897e-f1606a9d67b9
+### Delete a character
+DELETE http://localhost:8080/api/products/9be83deb-879f-4f11-9af0-0afaaff11ecc
