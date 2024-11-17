@@ -1,0 +1,66 @@
+### Get all professions
+GET http://localhost:8080/api/professions
+
+### Get all characters
+GET http://localhost:8080/api/characters
+
+
+### Create a new profession
+PUT http://localhost:8080/api/professions
+Content-Type: application/json
+
+{
+  "name": "Testowy",
+  "yearsOfExperience": 4
+}
+
+### Get a profession by UUID
+GET http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
+
+### Get a not existing profession
+GET http://localhost:8080/api/profession/8554295e-22c0-4d94-9358-177ccc857b10
+
+### Update a profession
+PATCH http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
+Content-Type: application/json
+
+{
+  "name": "NowaNazwa",
+  "yearsOfExperience": 5
+}
+
+### Delete a profession
+DELETE http://localhost:8080/api/professions/514046b4-3f8e-409c-a51f-b99e29c1406c
+
+### Get all characters of a given profession
+GET http://localhost:8080/api/professions/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/characters
+
+### Create new character with a given profession (Żołnierz)
+POST http://localhost:8080/api/professions/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/characters
+Content-Type: application/json
+
+{
+  "name": "Paweł",
+  "age": 30,
+  "level": 500
+}
+
+### Get all characters
+GET http://localhost:8080/api/characters
+
+### Get a character by UUID (Paweł Żołnierz lvl 500)
+GET http://localhost:8080/api/characters/
+
+### Get a not existing character
+GET http://localhost:8080/api/characters/9be83deb-879f-4f11-9af0-0afaaff11ecc
+
+### Update a character (Paweł, lvl 500 -> 50)
+PATCH http://localhost:8080/api/characters/9be83deb-879f-4f11-9af0-0afaaff11ecc
+Content-Type: application/json
+
+{
+  "level": 50
+}
+
+### Delete a character
+DELETE http://localhost:8080/api/characters/9be83deb-879f-4f11-9af0-0afaaff11ecc

@@ -1,0 +1,35 @@
+Character:
+{
+    "name": "Andrzej",
+    "age": 40,
+    "level": 2,
+    "profession": "d68ffd8e-e9e6-3191-a4cf-915bca1c5abb"    (Aktor)
+}
+
+Profession: {
+    "name": "Testowy",
+    "yearsOfExperience": 20,
+}
+
+GET:
+localhost:8080/api/characters -> all characters
+localhost:8080/api/characters/{character_uuid} -> details about character with given uuid
+=======
+localhost:8080/api/professions -> all professions
+localhost:8080/api/professions/{profession_uuid} -> details about profession with given uuid
+localhost:8080/api/professions/{profession_uuid}/characters -> characters with given profession
+
+
+POST:
+localhost:8080/api/professions/{profession_uuid}/characters -> create character with given profession
+
+PUT:
+localhost:8080/api/professions -> create profession
+
+PATCH:
+localhost:8080/api/characters/{uuid} -> update character with given uuid
+localhost:8080/api/professions/{uuid} -> update profession with given uuid
+
+DELETE:
+localhost:8080/api/characters/{uuid} -> delete character with given uuid
+localhost:8080/api/professions/{uuid} -> delete profession with given uuid
