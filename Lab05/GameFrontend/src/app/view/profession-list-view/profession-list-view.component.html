@@ -1,0 +1,19 @@
+<app-view-title title="Professions" />
+
+<mat-list>
+  @for (profession of professions?.professions; track profession.id) {
+  <mat-list-item>
+    <button mat-button [routerLink]="['/professions', profession.id]">
+      {{ profession.name }}
+    </button>
+    <button mat-icon-button (click)="deleteProfession(profession.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider />
+  }
+</mat-list>
+
+<button mat-raised-button [routerLink]="['/professions', 'new']">
+  New Profession
+</button>

@@ -1,0 +1,45 @@
+@if (profession) {
+<app-view-title title="Profession {{ profession.name }}" />
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ profession.name }}</mat-card-title>
+    <mat-card-subtitle>Years of Experience: {{ profession.yearsOfExperience }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-button [routerLink]="['/professions', profession.id, 'edit']">
+      Edit
+    </button>
+    <button mat-button [routerLink]="['/profession']">
+      Show all professions
+    </button>
+  </mat-card-actions>
+</mat-card>
+<br />
+
+<app-view-title title="{{ characters?.characters?.length }} characters" />
+<mat-list>
+  @for (character of characters?.characters; track character.id) {
+  <mat-list-item>
+    <button
+      mat-button
+      [routerLink]="['/professions', profession.id, 'characters', character.id]"
+    >
+      {{ character.name }}
+    </button>
+    <button mat-icon-button (click)="deleteCharacter(character.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider />
+  }
+</mat-list>
+
+<button
+  mat-raised-button
+  [routerLink]="['/professions', profession.id, 'characters', 'new']"
+>
+  New Character
+</button>
+}
+<app-error-message [message]="message" />

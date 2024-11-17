@@ -1,0 +1,9 @@
+@if (profession) {
+<app-view-title title="Edit profession {{ profession.name }}" />
+
+<app-profession-form
+  [profession]="profession"
+  [message]="message"
+  (submit)="onSubmit()"
+/>
+} @else {<app-error-message [message]="message" /> }

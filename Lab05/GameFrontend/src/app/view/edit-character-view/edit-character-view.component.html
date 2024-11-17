@@ -1,0 +1,11 @@
+@if (character && profession) {
+<app-view-title
+  title="Edit character {{ character.name }} in profession {{ profession.name }}"
+/>
+
+<app-character-form
+  [character]="character"
+  [message]="message"
+  (submit)="onSubmit()"
+/>
+} @else {<app-error-message [message]="message" />}
